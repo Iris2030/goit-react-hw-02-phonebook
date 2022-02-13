@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import s from './Form.module.css'
+import s from './Form.module.css';
+import PropTypes from "prop-types";
 
 export default class Form extends Component {
   state = {
@@ -72,4 +73,9 @@ const contactNames = this.props.allContacts.map(contact => contact.name)
       </form>
     );
   }
+}
+
+Form.propTypes={
+  addContact: PropTypes.func.isRequired,
+  allContacts: PropTypes.array.isRequired,
 }
